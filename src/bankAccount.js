@@ -1,7 +1,7 @@
-'use strict'
+"use strict";
 
 class Account {
-  constructor () {
+  constructor() {
     this._balance = 0;
   }
 }
