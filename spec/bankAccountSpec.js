@@ -75,5 +75,27 @@ describe("Account", function () {
           "08/03/2021 || 50 || || 150"
       );
     });
+
+    it("returns -150 if withdraw 100 and 50", function () {
+      account.withdraw(100);
+      account.withdraw(50);
+      expect(account.printStatement()).toBe(
+        "date || credit || debit || balance\n" +
+          "08/03/2021 || || -100 || -100\n" +
+          "08/03/2021 || || -50 || -150"
+      );
+    });
+
+    it("returns -150 if withdraw 100 and 50", function () {
+      account.deposit(100);
+      account.withdraw(100);
+      account.deposit(50);
+      expect(account.printStatement()).toBe(
+        "date || credit || debit || balance\n" +
+          "08/03/2021 || 100 || || 100\n" +
+          "08/03/2021 || || -100 || 0\n" +
+          "08/03/2021 || 50 || || 50"
+      );
+    });
   });
 });

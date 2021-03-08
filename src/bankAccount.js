@@ -43,31 +43,11 @@ class Account {
     // return `Withdraw: ${amount}`;
   }
 
-  // depositFormat() {
-  //   return (
-  //     `${this.dateFormat()}` +
-  //     ` || ` +
-  //     `${(this._balance += amount)}` +
-  //     ` || || ` +
-  //     `${this._balance}`
-  //   );
-  // }
-
-  // withdrawFormat(amount) {
-  //   return (
-  //     `${this.dateFormat()}` +
-  //     ` || || ` +
-  //     `${-amount}` +
-  //     ` || ` +
-  //     `${this._balance}`
-  //   );
-  // }
-
   printStatement() {
-    return (
-      "date || credit || debit || balance\n" +
-      `${this._transactions[0]}\n` +
-      `${this._transactions[1]}`
-    );
+    let header = "date || credit || debit || balance";
+    for (let i = 0; i < this._transactions.length; i++) {
+      header += "\n" + this._transactions[i];
+    }
+    return header;
   }
 }
