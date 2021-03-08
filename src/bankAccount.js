@@ -45,4 +45,12 @@ class Account {
       `${this._balance}`
     );
   }
+
+  printStatement(amount) {
+    return (
+      "date || credit || debit || balance\n" +
+      `${this.depositFormat(amount)}\n` +
+      `${this.withdrawFormat(amount)}`
+    );
+  }
 }

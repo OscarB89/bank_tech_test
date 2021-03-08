@@ -54,4 +54,14 @@ describe("Account", function () {
       expect(account.withdrawFormat(10)).toBe("08/03/2021 || || -10 || 0");
     });
   });
+
+  describe("printStatement", function () {
+    it("returns the history of transactions", function () {
+      expect(account.printStatement(10)).toBe(
+        "date || credit || debit || balance\n" +
+          "08/03/2021 || 10 || || 0\n" +
+          "08/03/2021 || || -10 || 0"
+      );
+    });
+  });
 });
