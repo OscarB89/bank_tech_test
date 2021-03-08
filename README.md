@@ -19,25 +19,35 @@ You'll work alone, and you'll also review your own code so you can practice refl
 
 ### User stories
 
+```
 As a client,
 So that I can save my money,
 I'd like to be able to deposit funds in my account.
+```
 
+```
 As a client,
 So that I can access my money,
 I'd like to be able to withdraw funds from my account.
+```
 
+```
 As a client,
 So that I know how much money I have,
 I want to be able to see my current balance.
+```
 
+```
 As a client,
 So that I can view my transactions history,
 I want to be able to see when I made each transaction.
+```
 
+```
 As a client,
 So that I can view my transactions history,
 I'd like to be able to view my bank statement.
+```
 
 ### Acceptance criteria
 
