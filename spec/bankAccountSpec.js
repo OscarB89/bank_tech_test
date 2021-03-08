@@ -13,7 +13,7 @@ describe("Account", function () {
     });
 
     it("transactions is set to an empty array upon initialization", function () {
-      expect(account._transactions).toEqual([]);
+      expect(account._depositTransactions).toEqual([]);
     });
   });
 
