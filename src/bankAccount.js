@@ -3,19 +3,22 @@
 class Account {
   constructor() {
     this._balance = 0;
+    this._transactions = [];
   }
 
   printBalance() {
-    return `New Balance: ${this._balance}`;
+    return this._balance;
   }
 
   deposit(amount) {
-    this._balance += amount;
-    return `Deposit: ${amount}`;
+    return (this._balance += amount);
+    // return `Deposit: ${amount}`;
   }
 
   withdraw(amount) {
-    this._balance -= amount;
-    return `Withdraw: ${amount}`;
+    return (this._balance -= amount);
+    // return `Withdraw: ${amount}`;
   }
+
+  printStatement() {}
 }
