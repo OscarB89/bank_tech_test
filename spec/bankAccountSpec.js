@@ -48,4 +48,10 @@ describe("Account", function () {
       expect(account.depositFormat(10)).toBe("08/03/2021 || 10 || || 0");
     });
   });
+
+  describe("withdrawFormat", function () {
+    it("returns the withdrawn money with the correct format", function () {
+      expect(account.withdrawFormat(10)).toBe("08/03/2021 || || -10 || 0");
+    });
+  });
 });

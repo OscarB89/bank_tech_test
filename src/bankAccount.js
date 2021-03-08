@@ -35,4 +35,14 @@ class Account {
       `${this._balance}`
     );
   }
+
+  withdrawFormat(amount) {
+    return (
+      `${this.dateFormat()}` +
+      ` || || ` +
+      `${-amount}` +
+      ` || ` +
+      `${this._balance}`
+    );
+  }
 }
