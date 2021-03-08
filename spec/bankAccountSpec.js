@@ -23,19 +23,19 @@ describe("Account", function () {
     });
   });
 
-  describe("deposit", function () {
-    it("returns the amount of money deposited", function () {
-      const DEPOSITED_AMOUNT = 10;
-      expect(account.deposit(DEPOSITED_AMOUNT)).toEqual(10);
-    });
-  });
+  // describe("deposit", function () {
+  //   it("returns the amount of money deposited", function () {
+  //     const DEPOSITED_AMOUNT = 10;
+  //     expect(account.deposit(DEPOSITED_AMOUNT)).toEqual(10);
+  //   });
+  // });
 
-  describe("withdraw", function () {
-    it("returns the amount of money withdrawn", function () {
-      const WITHDRAWN_AMOUNT = 10;
-      expect(account.withdraw(WITHDRAWN_AMOUNT)).toBe(-10);
-    });
-  });
+  // describe("withdraw", function () {
+  //   it("returns the amount of money withdrawn", function () {
+  //     const WITHDRAWN_AMOUNT = 10;
+  //     expect(account.withdraw(WITHDRAWN_AMOUNT)).toBe(-10);
+  //   });
+  // });
 
   describe("dateFormat", function () {
     it("returns the date with the correct format", function () {
@@ -43,24 +43,26 @@ describe("Account", function () {
     });
   });
 
-  describe("depositFormat", function () {
+  describe("deposit", function () {
     it("returns the deposit with the correct format", function () {
-      expect(account.depositFormat(10)).toBe("08/03/2021 || 10 || || 0");
+      expect(account.deposit(10)).toBe("08/03/2021 || 10 || || 10");
     });
   });
 
-  describe("withdrawFormat", function () {
+  describe("withdraw", function () {
     it("returns the withdrawn money with the correct format", function () {
-      expect(account.withdrawFormat(10)).toBe("08/03/2021 || || -10 || 0");
+      expect(account.withdraw(10)).toBe("08/03/2021 || || -10 || -10");
     });
   });
 
   describe("printStatement", function () {
     it("returns the history of transactions", function () {
+      account.deposit(100);
+      account.withdraw(50);
       expect(account.printStatement(10)).toBe(
         "date || credit || debit || balance\n" +
-          "08/03/2021 || 10 || || 0\n" +
-          "08/03/2021 || || -10 || 0"
+          "08/03/2021 || 100 || || 100\n" +
+          "08/03/2021 || || -50 || 50"
       );
     });
   });
