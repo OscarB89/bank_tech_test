@@ -25,4 +25,14 @@ class Account {
     let arrDate = this._date.toLocaleDateString("en-AU").split("/");
     return arrDate[0] + "/" + arrDate[1] + "/" + arrDate[2];
   }
+
+  depositFormat(amount) {
+    return (
+      `${this.dateFormat()}` +
+      ` || ` +
+      `${amount}` +
+      ` || || ` +
+      `${this._balance}`
+    );
+  }
 }

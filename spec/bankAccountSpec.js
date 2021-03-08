@@ -42,4 +42,10 @@ describe("Account", function () {
       expect(account.dateFormat()).toBe("08/03/2021");
     });
   });
+
+  describe("depositFormat", function () {
+    it("returns the deposit with the correct format", function () {
+      expect(account.depositFormat(10)).toBe("08/03/2021 || 10 || || 0");
+    });
+  });
 });
