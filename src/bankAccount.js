@@ -3,9 +3,9 @@
 class Account {
   constructor() {
     this._balance = 0;
-    // this._transactions = [];
-    this._depositTransactions = [];
-    this._withdrawTransactions = [];
+    this._transactions = [];
+    this._depositTransactions = "";
+    this._withdrawTransactions = "";
     this._date = new Date();
   }
 
@@ -20,22 +20,26 @@ class Account {
 
   deposit(amount) {
     this._balance += amount;
-    return (this._depositTransactions =
+    this._depositTransactions =
       `${this.dateFormat()}` +
       ` || ` +
       `${amount}` +
       ` || || ` +
-      `${this._balance}`);
+      `${this._balance}`;
+    this._transactions.push(this._depositTransactions);
+    return this._depositTransactions;
   }
 
   withdraw(amount) {
     this._balance -= amount;
-    return (this._withdrawTransactions =
+    this._withdrawTransactions =
       `${this.dateFormat()}` +
       ` || || ` +
       `${-amount}` +
       ` || ` +
-      `${this._balance}`);
+      `${this._balance}`;
+    this._transactions.push(this._withdrawTransactions);
+    return this._withdrawTransactions;
     // return `Withdraw: ${amount}`;
   }
 
@@ -62,8 +66,8 @@ class Account {
   printStatement() {
     return (
       "date || credit || debit || balance\n" +
-      `${this._depositTransactions}\n` +
-      `${this._withdrawTransactions}`
+      `${this._transactions[0]}\n` +
+      `${this._transactions[1]}`
     );
   }
 }

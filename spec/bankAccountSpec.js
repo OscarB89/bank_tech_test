@@ -13,7 +13,7 @@ describe("Account", function () {
     });
 
     it("transactions is set to an empty array upon initialization", function () {
-      expect(account._depositTransactions).toEqual([]);
+      expect(account._depositTransactions).toEqual("");
     });
   });
 
@@ -56,13 +56,23 @@ describe("Account", function () {
   });
 
   describe("printStatement", function () {
-    it("returns the history of transactions", function () {
+    it("returns 50 if deposited 100 and withdraw 50", function () {
       account.deposit(100);
       account.withdraw(50);
-      expect(account.printStatement(10)).toBe(
+      expect(account.printStatement()).toBe(
         "date || credit || debit || balance\n" +
           "08/03/2021 || 100 || || 100\n" +
           "08/03/2021 || || -50 || 50"
+      );
+    });
+
+    it("returns 150 if deposited 100 and 50", function () {
+      account.deposit(100);
+      account.deposit(50);
+      expect(account.printStatement()).toBe(
+        "date || credit || debit || balance\n" +
+          "08/03/2021 || 100 || || 100\n" +
+          "08/03/2021 || 50 || || 150"
       );
     });
   });
