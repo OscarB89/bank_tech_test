@@ -8,4 +8,8 @@ class Account {
   printBalance() {
     return this._balance;
   }
+
+  deposit(amount) {
+    return `Deposit: ${amount}`;
+  }
 }

@@ -18,4 +18,11 @@ describe("Account", function () {
       expect(account.printBalance()).toEqual(0);
     });
   });
+
+  describe("deposit", function () {
+    it("returns the amount of money deposited", function () {
+      let amount = 10;
+      expect(account.deposit(amount)).toEqual("Deposit: 10");
+    });
+  });
 });
