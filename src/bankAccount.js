@@ -4,6 +4,7 @@ class Account {
   constructor() {
     this._balance = 0;
     this._transactions = [];
+    this._date = new Date();
   }
 
   printBalance() {
@@ -20,5 +21,8 @@ class Account {
     // return `Withdraw: ${amount}`;
   }
 
-  printStatement() {}
+  dateFormat() {
+    let arrDate = this._date.toLocaleDateString("en-AU").split("/");
+    return arrDate[0] + "/" + arrDate[1] + "/" + arrDate[2];
+  }
 }

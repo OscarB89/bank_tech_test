@@ -36,4 +36,10 @@ describe("Account", function () {
       expect(account.withdraw(WITHDRAWN_AMOUNT)).toBe(-10);
     });
   });
+
+  describe("dateFormat", function () {
+    it("returns the date with the correct format", function () {
+      expect(account.dateFormat()).toBe("08/03/2021");
+    });
+  });
 });
