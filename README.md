@@ -104,9 +104,19 @@ $ account.printStatement();
 
 <img width="829" alt="Screenshot 2021-03-09 at 16 08 03" src="https://user-images.githubusercontent.com/71934417/110501702-5a475f80-80f2-11eb-8848-dc743946e2f4.png">
 
+## Unit tests
+
+From the root folder, open SpecRunner.html to access Jasmine tests
+
+```
+open SpecRunner.html
+```
+
+<img width="514" alt="Screenshot 2021-03-09 at 18 07 59" src="https://user-images.githubusercontent.com/71934417/110532568-e66a7e80-8114-11eb-87e3-257217672cd2.png">
+
 ## Test coverage
 
-Start karma to get the coverage summary
+Start karma to get the coverage summary from the root folder
 
 ```
 karma start
