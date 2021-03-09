@@ -63,3 +63,49 @@ As a client,
 So that I can view my transactions history,
 I'd like to be able to view my bank statement.
 ```
+
+## How to use this app
+
+Clone the current repository
+
+```
+$ git clone https://github.com/OscarB89/bank_tech_test.git
+```
+
+Go to the root directory of your cloned local repo and run
+
+```
+$ open SpecRunner.html
+```
+
+Once the console is opened, create an instance of the Account Class
+
+```
+const account = new Account();
+```
+
+To deposit an amount (e.g. $500)
+
+```
+$ account.deposit(500);
+```
+
+To withdraw an amount (e.g. $250)
+
+```
+$ account.withdraw(250);
+```
+
+To check the current balance
+
+```
+$ account.printBalance();
+```
+
+To print the Account Statement
+
+```
+$ atm.printStatement();
+```
+
+### Example
