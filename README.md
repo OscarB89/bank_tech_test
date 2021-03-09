@@ -111,3 +111,7 @@ $ account.printStatement();
 ### Example
 
 <img width="829" alt="Screenshot 2021-03-09 at 16 08 03" src="https://user-images.githubusercontent.com/71934417/110501702-5a475f80-80f2-11eb-8848-dc743946e2f4.png">
+
+## Test coverage
+
+<img width="634" alt="Screenshot 2021-03-09 at 18 07 34" src="https://user-images.githubusercontent.com/71934417/110527946-7efe0000-810f-11eb-973a-cd42a1ac3c76.png">
