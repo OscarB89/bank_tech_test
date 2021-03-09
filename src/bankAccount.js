@@ -44,9 +44,10 @@ class Account {
   }
 
   printStatement() {
+    let correctOrder = this._transactions.reverse();
     let header = "date || credit || debit || balance";
-    for (let i = 0; i < this._transactions.length; i++) {
-      header += "\n" + this._transactions[i];
+    for (let i = 0; i < correctOrder.length; i++) {
+      header += "\n" + correctOrder[i];
     }
     return header;
   }
