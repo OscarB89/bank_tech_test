@@ -20,6 +20,15 @@ class Account {
 
   deposit(amount) {
     this._balance += amount;
+    this.depositFormat(amount);
+  }
+
+  withdraw(amount) {
+    this._balance -= amount;
+    this.withdrawFormat(amount);
+  }
+
+  depositFormat(amount) {
     this._depositTransactions =
       `${this.dateFormat()}` +
       ` || ` +
@@ -27,20 +36,16 @@ class Account {
       ` || || ` +
       `${this._balance}`;
     this._transactions.push(this._depositTransactions);
-    return this._depositTransactions;
   }
 
-  withdraw(amount) {
-    this._balance -= amount;
+  withdrawFormat(amount) {
     this._withdrawTransactions =
       `${this.dateFormat()}` +
       ` || || ` +
-      `${-amount}` +
+      `${amount}` +
       ` || ` +
       `${this._balance}`;
     this._transactions.push(this._withdrawTransactions);
-    return this._withdrawTransactions;
-    // return `Withdraw: ${amount}`;
   }
 
   printStatement() {
