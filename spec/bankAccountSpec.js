@@ -3,6 +3,12 @@
 describe("Account", function () {
   let account;
   let baseTime;
+  let date = new Date();
+
+  function dateFormatter() {
+    let arrDate = date.toLocaleDateString("en-AU").split("/");
+    return arrDate[0] + "/" + arrDate[1] + "/" + arrDate[2];
+  }
 
   beforeEach(function () {
     account = new Account();
@@ -34,7 +40,7 @@ describe("Account", function () {
 
   describe("dateFormatter", function () {
     it("returns the date with the correct format", function () {
-      expect(account.dateFormatter()).toBe("09/03/2021");
+      expect(account.dateFormatter()).toBe(`${dateFormatter()}`);
     });
   });
 
@@ -44,8 +50,8 @@ describe("Account", function () {
       account.withdraw(50);
       expect(account.printStatement()).toBe(
         "date || credit || debit || balance\n" +
-          "09/03/2021 || || 50 || 50\n" +
-          "09/03/2021 || 100 || || 100"
+          `${dateFormatter()} || || 50 || 50\n` +
+          `${dateFormatter()} || 100 || || 100`
       );
     });
 
@@ -54,8 +60,8 @@ describe("Account", function () {
       account.deposit(50);
       expect(account.printStatement()).toBe(
         "date || credit || debit || balance\n" +
-          "09/03/2021 || 50 || || 150\n" +
-          "09/03/2021 || 100 || || 100"
+          `${dateFormatter()} || 50 || || 150\n` +
+          `${dateFormatter()} || 100 || || 100`
       );
     });
 
@@ -64,8 +70,8 @@ describe("Account", function () {
       account.withdraw(50);
       expect(account.printStatement()).toBe(
         "date || credit || debit || balance\n" +
-          "09/03/2021 || || 50 || -150\n" +
-          "09/03/2021 || || 100 || -100"
+          `${dateFormatter()} || || 50 || -150\n` +
+          `${dateFormatter()} || || 100 || -100`
       );
     });
 
@@ -75,9 +81,9 @@ describe("Account", function () {
       account.deposit(50);
       expect(account.printStatement()).toBe(
         "date || credit || debit || balance\n" +
-          "09/03/2021 || 50 || || 50\n" +
-          "09/03/2021 || || 100 || 0\n" +
-          "09/03/2021 || 100 || || 100"
+          `${dateFormatter()} || 50 || || 50\n` +
+          `${dateFormatter()} || || 100 || 0\n` +
+          `${dateFormatter()} || 100 || || 100`
       );
     });
 
@@ -87,9 +93,9 @@ describe("Account", function () {
       account.withdraw(500);
       expect(account.printStatement()).toBe(
         "date || credit || debit || balance\n" +
-          "09/03/2021 || || 500 || 2500\n" +
-          "09/03/2021 || 2000 || || 3000\n" +
-          "09/03/2021 || 1000 || || 1000"
+          `${dateFormatter()} || || 500 || 2500\n` +
+          `${dateFormatter()} || 2000 || || 3000\n` +
+          `${dateFormatter()} || 1000 || || 1000`
       );
     });
   });

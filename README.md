@@ -106,4 +106,18 @@ $ account.printStatement();
 
 ## Test coverage
 
+Start karma to get the coverage summary
+
+```
+karma start
+```
+
 <img width="634" alt="Screenshot 2021-03-09 at 18 07 34" src="https://user-images.githubusercontent.com/71934417/110527946-7efe0000-810f-11eb-973a-cd42a1ac3c76.png">
+
+Alternatively, index.html in the coverage folder provides the same summary
+
+```
+open coverage/html/index.html
+```
+
+<img width="1436" alt="Screenshot 2021-03-09 at 20 12 55" src="https://user-images.githubusercontent.com/71934417/110531762-e158ff80-8113-11eb-952d-d1aac896d171.png">
