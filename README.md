@@ -81,16 +81,16 @@ $ open SpecRunner.html
 Once the console is opened, create an instance of the Account Class
 
 ```
-const account = new Account();
+account = new Account();
 ```
 
-To deposit an amount (e.g. $500)
+To deposit an amount (e.g. 500)
 
 ```
 $ account.deposit(500);
 ```
 
-To withdraw an amount (e.g. $250)
+To withdraw an amount (e.g. 250)
 
 ```
 $ account.withdraw(250);
@@ -105,7 +105,7 @@ $ account.printBalance();
 To print the Account Statement
 
 ```
-$ atm.printStatement();
+$ account.printStatement();
 ```
 
 ### Example
