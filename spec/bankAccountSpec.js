@@ -58,58 +58,59 @@ describe("Account", function () {
   //   });
   // });
 
-  // describe("printStatement", function () {
-  //   it("returns 50 if deposited 100 and withdraw 50", function () {
-  //     account.deposit(100);
-  //     account.withdraw(50);
-  //     expect(account.printStatement()).toBe(
-  //       "date || credit || debit || balance\n" +
-  //         "09/03/2021 || 100 || || 100\n" +
-  //         "09/03/2021 || || -50 || 50"
-  //     );
-  //   });
+  describe("printStatement", function () {
+    it("returns +50 if deposited 100 and withdraw 50", function () {
+      account.deposit(100);
+      account.withdraw(50);
+      expect(account.printStatement()).toBe(
+        "date || credit || debit || balance\n" +
+          "09/03/2021 || || 50 || 50\n" +
+          "09/03/2021 || 100 || || 100"
+      );
+    });
 
-  //   it("returns 150 if deposited 100 and 50", function () {
-  //     account.deposit(100);
-  //     account.deposit(50);
-  //     expect(account.printStatement()).toBe(
-  //       "date || credit || debit || balance\n" +
-  //         "09/03/2021 || 100 || || 100\n" +
-  //         "09/03/2021 || 50 || || 150"
-  //     );
-  //   });
+    it("returns +150 if deposited 100 and 50", function () {
+      account.deposit(100);
+      account.deposit(50);
+      expect(account.printStatement()).toBe(
+        "date || credit || debit || balance\n" +
+          "09/03/2021 || 50 || || 150\n" +
+          "09/03/2021 || 100 || || 100"
+      );
+    });
 
-  //   it("returns -150 if withdraw 100 and 50", function () {
-  //     account.withdraw(100);
-  //     account.withdraw(50);
-  //     expect(account.printStatement()).toBe(
-  //       "date || credit || debit || balance\n" +
-  //         "09/03/2021 || || -100 || -100\n" +
-  //         "09/03/2021 || || -50 || -150"
-  //     );
-  //   });
+    it("returns -150 if withdraw 100 and 50", function () {
+      account.withdraw(100);
+      account.withdraw(50);
+      expect(account.printStatement()).toBe(
+        "date || credit || debit || balance\n" +
+          "09/03/2021 || || 50 || -150\n" +
+          "09/03/2021 || || 100 || -100"
+      );
+    });
 
-  //   it("returns -150 if withdraw 100 and 50", function () {
-  //     account.deposit(100);
-  //     account.withdraw(100);
-  //     account.deposit(50);
-  //     expect(account.printStatement()).toBe(
-  //       "date || credit || debit || balance\n" +
-  //         "09/03/2021 || 100 || || 100\n" +
-  //         "09/03/2021 || || -100 || 0\n" +
-  //         "09/03/2021 || 50 || || 50"
-  //     );
-  //   });
+    it("returns +50 if deposited 50, withdraw 100 and deposited 100", function () {
+      account.deposit(100);
+      account.withdraw(100);
+      account.deposit(50);
+      expect(account.printStatement()).toBe(
+        "date || credit || debit || balance\n" +
+          "09/03/2021 || 50 || || 50\n" +
+          "09/03/2021 || || 100 || 0\n" +
+          "09/03/2021 || 100 || || 100"
+      );
+    });
 
-  it("returns 2500 if deposit of 1000 and 2000 and withdraw 500", function () {
-    account.deposit(1000);
-    account.deposit(2000);
-    account.withdraw(500);
-    expect(account.printStatement()).toBe(
-      "date || credit || debit || balance\n" +
-        "09/03/2021 || || 500 || 2500\n" +
-        "09/03/2021 || 2000 || || 3000\n" +
-        "09/03/2021 || 1000 || || 1000"
-    );
+    it("returns 2500 if deposit of 1000 and 2000 and withdraw 500", function () {
+      account.deposit(1000);
+      account.deposit(2000);
+      account.withdraw(500);
+      expect(account.printStatement()).toBe(
+        "date || credit || debit || balance\n" +
+          "09/03/2021 || || 500 || 2500\n" +
+          "09/03/2021 || 2000 || || 3000\n" +
+          "09/03/2021 || 1000 || || 1000"
+      );
+    });
   });
 });
