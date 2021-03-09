@@ -46,12 +46,6 @@ describe("Account", function () {
   //   });
   // });
 
-  describe("dateFormat", function () {
-    it("returns the date with the correct format", function () {
-      expect(account.dateFormat()).toBe("09/03/2021");
-    });
-  });
-
   // describe("deposit", function () {
   //   it("returns the deposit with the correct format", function () {
   //     expect(account.deposit(10)).toBe("09/03/2021 || 10 || || 10");
@@ -107,7 +101,7 @@ describe("Account", function () {
   //     );
   //   });
 
-  it("returns -150 if withdraw 100 and 50", function () {
+  it("returns 2500 if deposit of 1000 and 2000 and withdraw 500", function () {
     account.deposit(1000);
     account.deposit(2000);
     account.withdraw(500);
