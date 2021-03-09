@@ -32,6 +32,12 @@ describe("Account", function () {
     });
   });
 
+  describe("dateFormatter", function () {
+    it("returns the date with the correct format", function () {
+      expect(account.dateFormatter()).toBe("09/03/2021");
+    });
+  });
+
   // describe("deposit", function () {
   //   it("returns the amount of money deposited", function () {
   //     const DEPOSITED_AMOUNT = 10;
