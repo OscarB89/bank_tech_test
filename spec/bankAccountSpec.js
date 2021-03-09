@@ -38,32 +38,6 @@ describe("Account", function () {
     });
   });
 
-  // describe("deposit", function () {
-  //   it("returns the amount of money deposited", function () {
-  //     const DEPOSITED_AMOUNT = 10;
-  //     expect(account.deposit(DEPOSITED_AMOUNT)).toEqual(10);
-  //   });
-  // });
-
-  // describe("withdraw", function () {
-  //   it("returns the amount of money withdrawn", function () {
-  //     const WITHDRAWN_AMOUNT = 10;
-  //     expect(account.withdraw(WITHDRAWN_AMOUNT)).toBe(-10);
-  //   });
-  // });
-
-  // describe("deposit", function () {
-  //   it("returns the deposit with the correct format", function () {
-  //     expect(account.deposit(10)).toBe("09/03/2021 || 10 || || 10");
-  //   });
-  // });
-
-  // describe("withdraw", function () {
-  //   it("returns the withdrawn money with the correct format", function () {
-  //     expect(account.withdraw(10)).toBe("09/03/2021 || || 10 || 10");
-  //   });
-  // });
-
   describe("printStatement", function () {
     it("returns +50 if deposited 100 and withdraw 50", function () {
       account.deposit(100);
