@@ -30,6 +30,18 @@ describe("Account", function () {
     it("transactions is set to an empty array upon initialization", function () {
       expect(account._depositTransactions).toEqual("");
     });
+
+    it("transactions is set to an empty array upon initialization", function () {
+      expect(account._withdrawTransactions).toEqual("");
+    });
+
+    it("transactions is set to an empty array upon initialization", function () {
+      expect(account._transactions).toEqual([]);
+    });
+
+    it("transactions is set to an empty array upon initialization", function () {
+      expect(account._date).toEqual(`${dateFormatter()}`);
+    });
   });
 
   describe("printBalance", function () {
