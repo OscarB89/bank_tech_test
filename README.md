@@ -1,5 +1,7 @@
 # Bank tech test
 
+Provides the business logic for a basic banking app and following the principles of test driven development. I used Jasmine for running tests, and Istanbul for analysing coverage. I have ensured 100% test coverage for this project.
+
 ## Specification
 
 ### Requirements
@@ -23,6 +25,16 @@ date || credit || debit || balance
 13/01/2012 || 2000.00 || || 3000.00
 10/01/2012 || 1000.00 || || 1000.00
 ```
+
+## Approach
+
+I started the process by writing user stories based on the given brief and wrote a class diagram from these user stories. I then used TDD to get the functions of the class diagram built.
+
+Once the MVP was working, I seperated the larger Account class into two - Accounts and Transactions. This was to follow the SRP, as the Account class was filling too many roles. While extracting this to a new class, I used mocking and dependency injection in Jasmine to ensure that my code was following a modular pattern.
+
+## Structure
+
+XXXX
 
 ## User stories
 
@@ -54,28 +66,6 @@ I want to be able to see when I made each transaction.
 As a client,
 So that I can view my transactions history,
 I'd like to be able to view my bank statement.
-```
-
-## Dependencies
-
-For Karma (from the root of the folder)
-
-```
-npm install karma --save-dev
-```
-
-```
-npm install karma-jasmine karma-chrome-launcher jasmine-core --save-dev
-```
-
-For eslint (from the root of the folder)
-
-```
-npm install eslint --save-dev
-```
-
-```
-npx eslint --init
 ```
 
 ## How to use this app
@@ -126,6 +116,28 @@ $ account.printStatement();
 
 <img width="829" alt="Screenshot 2021-03-09 at 16 08 03" src="https://user-images.githubusercontent.com/71934417/110501702-5a475f80-80f2-11eb-8848-dc743946e2f4.png">
 
+## Dependencies
+
+For Karma (from the root of the folder)
+
+```
+npm install karma --save-dev
+```
+
+```
+npm install karma-jasmine karma-chrome-launcher jasmine-core --save-dev
+```
+
+For eslint (from the root of the folder)
+
+```
+npm install eslint --save-dev
+```
+
+```
+npx eslint --init
+```
+
 ## Unit tests
 
 From the root folder, open SpecRunner.html to access Jasmine tests
@@ -153,3 +165,7 @@ open coverage/html/index.html
 ```
 
 <img width="1436" alt="Screenshot 2021-03-09 at 20 12 55" src="https://user-images.githubusercontent.com/71934417/110531762-e158ff80-8113-11eb-952d-d1aac896d171.png">
+
+## Extensions to be implemented
+
+I need to seperate the larger Account class into two as well as follow the SRP
