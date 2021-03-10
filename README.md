@@ -112,7 +112,7 @@ From the root folder, open SpecRunner.html to access Jasmine tests
 open SpecRunner.html
 ```
 
-<img width="514" alt="Screenshot 2021-03-09 at 18 07 59" src="https://user-images.githubusercontent.com/71934417/110532568-e66a7e80-8114-11eb-87e3-257217672cd2.png">
+<img width="520" alt="Screenshot 2021-03-09 at 20 31 32" src="https://user-images.githubusercontent.com/71934417/110533980-78bf5200-8116-11eb-888f-cc8fae248246.png">
 
 ## Test coverage
 
