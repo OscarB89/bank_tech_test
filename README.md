@@ -56,6 +56,28 @@ So that I can view my transactions history,
 I'd like to be able to view my bank statement.
 ```
 
+## Dependencies
+
+For Karma (from the root of the folder)
+
+```
+npm install karma --save-dev
+```
+
+```
+npm install karma-jasmine karma-chrome-launcher jasmine-core --save-dev
+```
+
+For eslint (from the root of the folder)
+
+```
+npm install eslint --save-dev
+```
+
+```
+npx eslint --init
+```
+
 ## How to use this app
 
 Clone the current repository
