@@ -30,9 +30,9 @@ date || credit || debit || balance
 
 I started the process by writing user stories based on the given brief and wrote a class diagram from these user stories. I then used TDD to get the functions of the class diagram built.
 
-Once the MVP was working, I seperated the larger Account class into two - Accounts and Transactions. This was to follow the SRP, as the Account class was filling too many roles. While extracting this to a new class, I used mocking and dependency injection in Jasmine to ensure that my code was following a modular pattern.
-
 ## Structure
+
+### Class diagram
 
 XXXX
 
