@@ -114,7 +114,7 @@ $ account.printStatement();
 
 ### Example
 
-<img width="829" alt="Screenshot 2021-03-09 at 16 08 03" src="https://user-images.githubusercontent.com/71934417/110501702-5a475f80-80f2-11eb-8848-dc743946e2f4.png">
+<img width="1116" alt="Screenshot 2021-03-10 at 14 34 22" src="https://user-images.githubusercontent.com/71934417/110645267-b9b67580-81ad-11eb-89a2-beae249fab4d.png">
 
 ## Dependencies
 
@@ -146,7 +146,7 @@ From the root folder, open SpecRunner.html to access Jasmine tests
 open SpecRunner.html
 ```
 
-<img width="520" alt="Screenshot 2021-03-09 at 20 31 32" src="https://user-images.githubusercontent.com/71934417/110533980-78bf5200-8116-11eb-888f-cc8fae248246.png">
+<img width="656" alt="Screenshot 2021-03-10 at 14 31 54" src="https://user-images.githubusercontent.com/71934417/110644930-7956f780-81ad-11eb-9bbb-001e4e0012f3.png">
 
 ## Test coverage
 
