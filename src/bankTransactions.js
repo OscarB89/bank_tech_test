@@ -23,12 +23,22 @@ class BankTransactions {
   }
 
   withdrawTransactions(amount) {
+    this._balance.withdraw(amount);
     this._withdrawTransactions =
       `${this._date.currentDate()}` +
       ` || || ` +
       `${amount.toFixed(2)}` +
       ` || ` +
-      `${this._balance.printBalance()}`;
+      `${this.accountBalance()}`;
     this._transactionsHistory.push(this._withdrawTransactions);
+  }
+
+  printStatement() {
+    let correctOrder = this._transactionsHistory.reverse();
+    let header = "date || credit || debit || balance";
+    for (let i = 0; i < correctOrder.length; i++) {
+      header += "\n" + correctOrder[i];
+    }
+    return header;
   }
 }

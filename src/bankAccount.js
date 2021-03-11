@@ -23,25 +23,25 @@ class Account {
     // this._transactions.push(this._withdrawTransactions);
   // }
 
-  depositFormat(amount) {
-    this._depositTransactions =
-      `${this._date.currentDate()}` +
-      ` || ` +
-      `${amount.toFixed(2)}` +
-      ` || || ` +
-      `${this._balance.printBalance()}`;
-    this._transactions.push(this._depositTransactions);
-  }
+  // depositFormat(amount) {
+  //   this._depositTransactions =
+  //     `${this._date.currentDate()}` +
+  //     ` || ` +
+  //     `${amount.toFixed(2)}` +
+  //     ` || || ` +
+  //     `${this._balance.printBalance()}`;
+  //   this._transactions.push(this._depositTransactions);
+  // }
 
-  withdrawFormat(amount) {
-    this._withdrawTransactions =
-      `${this._date.currentDate()}` +
-      ` || || ` +
-      `${amount.toFixed(2)}` +
-      ` || ` +
-      `${this._balance.toFixed(2)}`;
-    this._transactions.push(this._withdrawTransactions);
-  }
+  // withdrawFormat(amount) {
+  //   this._withdrawTransactions =
+  //     `${this._date.currentDate()}` +
+  //     ` || || ` +
+  //     `${amount.toFixed(2)}` +
+  //     ` || ` +
+  //     `${this._balance.toFixed(2)}`;
+  //   this._transactions.push(this._withdrawTransactions);
+  // }
 
   printStatement() {
     let correctOrder = this._transactions._transactionsHistory.reverse();
