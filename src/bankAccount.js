@@ -6,16 +6,11 @@ class Account {
     this._transactions = [];
     this._depositTransactions = "";
     this._withdrawTransactions = "";
-    this._date = new Date();
+    this._date = new DateFormatter();
   }
 
   printBalance() {
     return this._balance.toFixed(2);
-  }
-
-  dateFormatter() {
-    let arrDate = this._date.toLocaleDateString("en-AU").split("/");
-    return arrDate[0] + "/" + arrDate[1] + "/" + arrDate[2];
   }
 
   deposit(amount) {
@@ -30,7 +25,7 @@ class Account {
 
   depositFormat(amount) {
     this._depositTransactions =
-      `${this.dateFormatter()}` +
+      `${this._date.currentDate()}` +
       ` || ` +
       `${amount.toFixed(2)}` +
       ` || || ` +
@@ -40,7 +35,7 @@ class Account {
 
   withdrawFormat(amount) {
     this._withdrawTransactions =
-      `${this.dateFormatter()}` +
+      `${this._date.currentDate()}` +
       ` || || ` +
       `${amount.toFixed(2)}` +
       ` || ` +

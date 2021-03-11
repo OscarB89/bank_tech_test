@@ -2,10 +2,10 @@
 
 describe("Account", function () {
   let account;
-  let baseTime;
-  let date = new Date();
+  // let baseTime;
 
-  function dateFormatter() {
+  function currentDate() {
+    let date = new Date();
     let arrDate = date.toLocaleDateString("en-AU").split("/");
     return arrDate[0] + "/" + arrDate[1] + "/" + arrDate[2];
   }
@@ -13,14 +13,14 @@ describe("Account", function () {
   beforeEach(function () {
     account = new Account();
     // trying to mock date but does not work
-    jasmine.clock().install();
-    baseTime = new Date("03/09/2021");
-    jasmine.clock().mockDate(baseTime);
+    // jasmine.clock().install();
+    // baseTime = new Date("03/09/2021");
+    // jasmine.clock().mockDate(baseTime);
   });
 
-  afterEach(function () {
-    jasmine.clock().uninstall();
-  });
+  // afterEach(function () {
+  //   jasmine.clock().uninstall();
+  // });
 
   describe("constructor", function () {
     it("balance is set to 0 upon initialization", function () {
@@ -46,20 +46,14 @@ describe("Account", function () {
     });
   });
 
-  describe("dateFormatter", function () {
-    it("returns the date with the correct format", function () {
-      expect(account.dateFormatter()).toBe(`${dateFormatter()}`);
-    });
-  });
-
   describe("printStatement", function () {
     it("returns 50.00 if deposited 100.00 and withdraw 50.00", function () {
       account.deposit(100);
       account.withdraw(50);
       expect(account.printStatement()).toBe(
         "date || credit || debit || balance\n" +
-          `${dateFormatter()} || || 50.00 || 50.00\n` +
-          `${dateFormatter()} || 100.00 || || 100.00`
+          `${currentDate()} || || 50.00 || 50.00\n` +
+          `${currentDate()} || 100.00 || || 100.00`
       );
     });
 
@@ -68,8 +62,8 @@ describe("Account", function () {
       account.deposit(50);
       expect(account.printStatement()).toBe(
         "date || credit || debit || balance\n" +
-          `${dateFormatter()} || 50.00 || || 150.00\n` +
-          `${dateFormatter()} || 100.00 || || 100.00`
+          `${currentDate()} || 50.00 || || 150.00\n` +
+          `${currentDate()} || 100.00 || || 100.00`
       );
     });
 
@@ -78,8 +72,8 @@ describe("Account", function () {
       account.withdraw(50);
       expect(account.printStatement()).toBe(
         "date || credit || debit || balance\n" +
-          `${dateFormatter()} || || 50.00 || -150.00\n` +
-          `${dateFormatter()} || || 100.00 || -100.00`
+          `${currentDate()} || || 50.00 || -150.00\n` +
+          `${currentDate()} || || 100.00 || -100.00`
       );
     });
 
@@ -89,9 +83,9 @@ describe("Account", function () {
       account.deposit(50);
       expect(account.printStatement()).toBe(
         "date || credit || debit || balance\n" +
-          `${dateFormatter()} || 50.00 || || 50.00\n` +
-          `${dateFormatter()} || || 100.00 || 0.00\n` +
-          `${dateFormatter()} || 100.00 || || 100.00`
+          `${currentDate()} || 50.00 || || 50.00\n` +
+          `${currentDate()} || || 100.00 || 0.00\n` +
+          `${currentDate()} || 100.00 || || 100.00`
       );
     });
 
@@ -101,9 +95,9 @@ describe("Account", function () {
       account.withdraw(500);
       expect(account.printStatement()).toBe(
         "date || credit || debit || balance\n" +
-          `${dateFormatter()} || || 500.00 || 2500.00\n` +
-          `${dateFormatter()} || 2000.00 || || 3000.00\n` +
-          `${dateFormatter()} || 1000.00 || || 1000.00`
+          `${currentDate()} || || 500.00 || 2500.00\n` +
+          `${currentDate()} || 2000.00 || || 3000.00\n` +
+          `${currentDate()} || 1000.00 || || 1000.00`
       );
     });
   });

@@ -2,9 +2,12 @@ module.exports = function (config) {
   config.set({
     basePath: "",
     frameworks: ["jasmine"],
-    files: ["src/bankAccount.js", "spec/bankAccountSpec.js"],
+    files: [
+      'src/**',
+      'spec/**'
+    ],
     preprocessors: {
-      "src/bankAccount.js": ["coverage"],
+      'src/*': ['coverage']
     },
     plugins: [
       "karma-jasmine",
