@@ -2,25 +2,27 @@
 
 class Account {
   constructor() {
-    this._balance = 0.00;
+    this._balance = new BankBalance ();
     this._transactions = [];
     this._depositTransactions = "";
     this._withdrawTransactions = "";
     this._date = new DateFormatter();
   }
 
-  printBalance() {
-    return this._balance.toFixed(2);
+  // printBalance() {
+  //   return this._balance.toFixed(2);
+  // }
+
+  depositTransactions() {
+    // this._balance += amount;
+    // this.depositFormat(amount);
+    this._transactions.push(this._depositTransactions);
   }
 
-  deposit(amount) {
-    this._balance += amount;
-    this.depositFormat(amount);
-  }
-
-  withdraw(amount) {
-    this._balance -= amount;
-    this.withdrawFormat(amount);
+  withdrawTransactions() {
+    // this._balance -= amount;
+    // this.withdrawFormat(amount);
+    this._transactions.push(this._withdrawTransactions);
   }
 
   depositFormat(amount) {
@@ -30,7 +32,7 @@ class Account {
       `${amount.toFixed(2)}` +
       ` || || ` +
       `${this._balance.toFixed(2)}`;
-    this._transactions.push(this._depositTransactions);
+    // this._transactions.push(this._depositTransactions);
   }
 
   withdrawFormat(amount) {
@@ -40,7 +42,7 @@ class Account {
       `${amount.toFixed(2)}` +
       ` || ` +
       `${this._balance.toFixed(2)}`;
-    this._transactions.push(this._withdrawTransactions);
+    // this._transactions.push(this._withdrawTransactions);
   }
 
   printStatement() {
