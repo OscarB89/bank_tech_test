@@ -13,7 +13,7 @@ class BankTransactions {
       ` || ` +
       `${amount.toFixed(2)}` +
       ` || || ` +
-      `${balance}`;
+      `${Number(balance).toFixed(2)}`;
       this._allTransactions.push(this._depositTransaction);
   }
 
@@ -22,7 +22,7 @@ class BankTransactions {
       ` || || ` +
       `${amount.toFixed(2)}` +
       ` || ` +
-      `${balance}`;
+      `${Number(balance).toFixed(2)}`;
       this._allTransactions.push(this._withdrawTransactions);
   }
 }
