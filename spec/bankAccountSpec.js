@@ -12,15 +12,7 @@ describe("Account", function () {
 
   beforeEach(function () {
     account = new Account();
-    // trying to mock date but does not work
-    // jasmine.clock().install();
-    // baseTime = new Date("03/09/2021");
-    // jasmine.clock().mockDate(baseTime);
   });
-
-  // afterEach(function () {
-  //   jasmine.clock().uninstall();
-  // });
 
   describe("accountBalance", function () {
     it("returns the balance", function () {

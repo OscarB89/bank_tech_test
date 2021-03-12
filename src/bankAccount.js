@@ -18,7 +18,7 @@ class Account  {
 
   withdrawTransactions(amount) {
     this._balance.withdraw(amount);
-    this._transaction.recordDeposit(amount, this.accountBalance());
+    this._transaction.recordWithdraw(amount, this.accountBalance());
   }
 
   printStatement() {

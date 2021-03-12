@@ -18,11 +18,11 @@ class BankTransactions {
   }
 
   recordWithdraw (amount, balance) {
-      this._withdrawTransactions = `${this._date.currentDate()}` +
+      this._withdrawTransaction = `${this._date.currentDate()}` +
       ` || || ` +
       `${amount.toFixed(2)}` +
       ` || ` +
       `${Number(balance).toFixed(2)}`;
-      this._allTransactions.push(this._withdrawTransactions);
+      this._allTransactions.push(this._withdrawTransaction);
   }
 }
