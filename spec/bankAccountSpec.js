@@ -22,24 +22,6 @@ describe("Account", function () {
   //   jasmine.clock().uninstall();
   // });
 
-  // describe("constructor", function () {
-  //   it("balance is set to 0 upon initialization", function () {
-  //     expect(account._balance).toEqual(0.00);
-  //   });
-
-  //   it("depositTransactions is set to an empty string upon initialization", function () {
-  //     expect(account._depositTransactions).toEqual("");
-  //   });
-
-  //   it("withdrawtransactions is set to an empty string upon initialization", function () {
-  //     expect(account._withdrawTransactions).toEqual("");
-  //   });
-
-  //   it("transactions is set to an empty array upon initialization", function () {
-  //     expect(account._transactions).toEqual([]);
-  //   });
-  // });
-
   describe("accountBalance", function () {
     it("returns the balance", function () {
       expect(account.accountBalance()).toEqual('0.00');

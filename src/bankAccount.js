@@ -2,7 +2,7 @@
 
 class Account  {
   constructor () {
-    this._transactionsHistory = [];
+    this._transaction = new BankTransactions ();
     this._date = new DateFormatter ();
     this._balance = new BankBalance ();
   }
@@ -13,28 +13,16 @@ class Account  {
 
   depositTransactions(amount) {
     this._balance.deposit(amount);
-    this._depositTransactions =
-      `${this._date.currentDate()}` +
-      ` || ` +
-      `${amount.toFixed(2)}` +
-      ` || || ` +
-      `${this.accountBalance()}`;
-    this._transactionsHistory.push(this._depositTransactions);
+    this._transaction.recordDeposit(amount, this.accountBalance());
   }
 
   withdrawTransactions(amount) {
     this._balance.withdraw(amount);
-    this._withdrawTransactions =
-      `${this._date.currentDate()}` +
-      ` || || ` +
-      `${amount.toFixed(2)}` +
-      ` || ` +
-      `${this.accountBalance()}`;
-    this._transactionsHistory.push(this._withdrawTransactions);
+    this._transaction.recordDeposit(amount, this.accountBalance());
   }
 
   printStatement() {
-    let correctOrder = this._transactionsHistory.reverse();
+    let correctOrder = this._transaction._allTransactions.reverse();
     let header = "date || credit || debit || balance";
     for (let i = 0; i < correctOrder.length; i++) {
       header += "\n" + correctOrder[i];
